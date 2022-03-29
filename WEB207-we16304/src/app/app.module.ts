@@ -20,6 +20,11 @@ import { LayoutComponent } from './layout/layout.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FoosterComponent } from './layout/fooster/fooster.component';
 import { AsideComponent } from './layout/aside/aside.component';
+import { PostComponent } from './post/post.component';
+import { PostDetailComponent } from './post-detail/post-detail.component';
+import { PostFormComponent } from './post-form/post-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PostService } from './services/post.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,16 +38,22 @@ import { AsideComponent } from './layout/aside/aside.component';
     LayoutComponent,
     HeaderComponent,
     FoosterComponent,
-    AsideComponent
+    AsideComponent,
+    PostComponent,
+    PostDetailComponent,
+    PostFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule, // dua vao de cac component con co the sd,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [StudentService],
+  providers: [StudentService,
+  PostService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
